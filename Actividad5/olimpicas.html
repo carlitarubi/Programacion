@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      var marca1=Infinity;
+      var marca2=Infinity;
+      var marca3=Infinity;
+      var marca=Infinity;
+      var nombre1="";
+      var nombre2="";
+      var nombre3="";
+      var nombre="";
+      var cambion="";
+      var cambio=0;
+
+     function campos(){
+          nombre=prompt(`Cual es el nombre del corredor?`);
+        if (nombre !="salir"){
+          marca=Number(prompt(`Cual es su marca?`));
+        }
+      }
+
+      function ordenar(){
+        if(marca1>marca2){
+          cambio=marca1;
+          marca1=marca2;
+          marca2=cambio;
+
+          cambion=nombre1;
+          nombre1=nombre;
+          nombre=cambion;
+        }
+        if(marca1>marca3){
+          cambio=marca1;
+          marca1=marca3;
+          marc3=cambio;
+
+          cambion=nombre1;
+          nombre1=nombre;
+          nombre=cambion;
+        }
+        if(marca1>marca){
+          cambio=marca1;
+          marca1=marca;
+          marca=cambio;
+
+          cambion=nombre1;
+          nombre1=nombre;
+          nombre=cambion;
+        }
+        if(marca2>marca3){
+          cambio=marca2;
+          marca2=marca3;
+          marca3=cambio;
+
+          cambion=nombre2;
+          nombre2=nombre;
+          nombre=cambion;
+        }
+        if(marca2>marca){
+          cambio=marca2;
+          marca2=marca;
+          marca=cambio;
+
+          cambion=nombre2;
+          nombre2=nombre;
+          nombre=cambion;
+        }
+        if(marca3>marca){
+          cambio=marca3;
+          marca3=marca;
+          marca=cambio;
+
+          cambion=nombre3;
+          nombre3=nombre;
+          nombre=cambion;
+        }
+      }
+
+      while (nombre != "salir"){
+        campos()
+        ordenar()
+      }
+
+      console.log(nombre1+` con marca `+marca1);
+      console.log(nombre2+` con marca `+marca2);
+      console.log(nombre3+` con marca `+marca3);
+    </script>
+  </body>
+</html>

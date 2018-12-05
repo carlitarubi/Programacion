@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var jugador=[];
+      var puntos2=[];
+      var puntos3=[];
+      var tiempo=[];
+
+      var n="";
+      var p2;
+      var p3;
+      var t;
+
+      function jugadores(){
+        while(n !="salir"){
+          n=prompt("Cual es el nombre del jugador?");
+            if(n!="salir"){
+              jugador.push(n);
+              p2=Number(prompt("Canastas de dos?"));
+              puntos2.push(p2);
+              p3=Number(prompt("Canastas de tres?"));
+              puntos3.push(p3);
+              t=Number(prompt("Tiempo jugado?"));
+              tiempo.push(t);
+            }
+          }
+        }
+        jugadores();
+
+
+      function dobles(array2){
+        var numero=0;
+        var suma=0;
+
+      for (var i = 0; i < array2.length; i++) {
+        numero = puntos2[i];
+        suma = suma + numero;
+        }
+        media = suma/array2.length;
+        return ("La media de dobles es "+media);
+      }
+      console.log(dobles(puntos2));
+
+      function triples(array3){
+        var numero=0;
+        var suma=0;
+
+      for (var i = 0; i < array3.length; i++) {
+        numero = puntos3[i];
+        suma = suma + numero;
+        }
+        media = suma/array3.length;
+        return ("La media de triples es "+media);
+      }
+      console.log(triples(puntos3));
+
+      function time(arrayT){
+        let numero=0;
+        let suma=0;
+      for (let i = 0; i < arrayT.length; i++) {
+        numero = arrayT[i];
+        suma = suma + numero;
+        }
+        media = suma/arrayT.length;
+        return ("La media del tiempo jugado es "+media);
+      }
+      console.log(time(tiempo));
+
+      function player(arrayP){
+        let cambio=0;
+        let puntos=0;
+        for (let i = 0; i < arrayP.length; i++) {
+          let dos=puntos2[i]*2;
+          let tres=puntos3[i]*3;
+          let total=dos+tres;
+              if (total>cambio){
+                puntos=total;
+                jugadores=arrayP[i];
+              }
+        }return ("EL jugador que ha echo mejor marca es "+jugadores+" con una puntuación de "+puntos+" puntos.");
+      }
+      console.log(player(jugador));
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
