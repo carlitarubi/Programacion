@@ -1,0 +1,45 @@
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var operaciones=["+","-"];
+    var num=0;
+
+    function op1(min,max) {
+      num1=Math.round(Math.random()*(max - min) + min);
+
+    }
+    op1(1,10);
+
+    function op2(min,max) {
+      simbolo=Math.round(Math.random()*(max - min) + min);
+        if(simbolo==0){
+      num=operaciones[0];
+
+    }else{
+      num=operaciones[1];
+    }
+    }
+    op2(0,1);
+
+    function op3(min,max) {
+      num2=Math.round(Math.random()*(max - min) + min);
+    }
+    op3(1,10);
+
+    var respuesta=Number(prompt("Cual es la respuesta a esta equación "+num1+num+num2+"?"));
+
+    function operacion(numero,sib,numero2,resultado){
+      if(resultado==eval(numero+sib+numero2)){
+        return "Perfecto";
+      }
+      return "Mal";
+    }
+console.log(operacion(num1,num,num2,respuesta));
+    </script>
+  </body>
+</html>
