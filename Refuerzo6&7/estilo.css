@@ -1,0 +1,30 @@
+table{
+
+  text-align: center;
+  border: 3px solid;
+  border-color: #5ADDE1;
+  width: 50%;
+  height: 50px;
+  padding: 15px;
+
+}
+.jugador{
+  text-align: center;
+  border: 3px solid;
+  border-color: #5ADDE1;
+  width: 25%;
+  height: 15px;
+  padding: 15px;
+}
+th{
+  background-color: #5ADDE1;
+  color: white;
+  border-bottom: 1px solid #58F2F6;
+}
+td{
+  border-bottom: 1px solid #DDF7F8;
+}
+
+body{
+  text-align: center;
+}
