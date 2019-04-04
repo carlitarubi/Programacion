@@ -1,9 +1,9 @@
 <?php
 require "./../src/Jugador.php";
 
-$e=new Jugador();
-$resultado=$e->listarJugador();
-$conexion=conexion();
+$j=new Jugador();
+$conexion=$j->conexion();
+
 
  ?>
  <!DOCTYPE html>
@@ -17,12 +17,10 @@ $conexion=conexion();
      <?php
      include "./assets/navSub.php";
        // listarJugador();
-       if(isset($error)){
-         if($error!="") echo "<h4>ERROR:$error</h4>";
-       }
+
       ?>
 
-      <table align='center'>
+      <table align='center' border=1>
     <tr>
       <th>Codigo</th>
       <th>Nombre</th>
@@ -33,18 +31,7 @@ $conexion=conexion();
       <th>Equipo</th>
    </tr>
      <?php
-     foreach ($resultado as $jugador){
-      echo "<tr>";
-      echo "<td>" .$jugador['codigo']."</td>";
-      echo "<td>" .$jugador['nombre']."</td>";
-      echo "<td>" .$jugador['procedencia']."</td>";
-      echo "<td>" .$jugador['altura']."</td>";
-      echo "<td>" .$jugador['peso']."</td>";
-      echo "<td>" .$jugador['posicion']."</td>";
-      echo "<td>" .$jugador['equipo']."</td>";
-
-      echo "</tr>";
-    }
+     $resultado=$j->listarJugador();
       ?>
  </table>
    </body>

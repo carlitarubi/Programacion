@@ -31,7 +31,7 @@ class Jugador
     return $error;
   }
 
-  function conexion(){
+  public function conexion(){
   $this->conexion=new mysqli("localhost", "root", "", "nba");
 if ($this->conexion->connect_errno) {
   echo "fallo al conectar MySql: (" . $this->conexion->connect_errno . ") " . $this->conexion->connect_error;
@@ -39,10 +39,20 @@ if ($this->conexion->connect_errno) {
 }
 
 public function listarJugador(){
-  $consulta="select * from jugadores";
+  $consulta=("select * from jugadores");
   $resultado=$this->conexion->query($consulta);
-  return $resultado;
-}
+  foreach ($resultado as $jugador){
+   echo "<tr>";
+   echo "<td>" .$jugador['codigo']."</td>";
+   echo "<td>" .$jugador['Nombre']."</td>";
+   echo "<td>" .$jugador['Procedencia']."</td>";
+   echo "<td>" .$jugador['Altura']."</td>";
+   echo "<td>" .$jugador['Peso']."</td>";
+   echo "<td>" .$jugador['Posicion']."</td>";
+   echo "<td>" .$jugador['Nombre_equipo']."</td>";
+   echo "</tr>";
+ }
+    }
 
 public function insertarJugador(){
   $consulta="insert into jugadores (codigo, Nombre, Procedencia, Altura, Peso, Posicion, Nombre_equipo)
