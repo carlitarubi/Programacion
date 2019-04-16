@@ -7,8 +7,8 @@ if ($conexion->connect_errno) {
 
 }
  ?>
-    <div class=""><a href="./public/index.php"><button>Inicio</button></div>
- <table class='table.striped' border="1">
+    <div class=""><a href="../public/index.php"><button>Inicio</button></a></div>
+ <table border="1">
    <tr>
      <th>ID</th>
      <th>Nombre</th>
@@ -20,7 +20,7 @@ if ($conexion->connect_errno) {
    <?php
    foreach ($resultado as $usuarios){
    echo "<tr>";
-   echo "<td><a href=juego.php?usuario=".$usuarios['id'].">" .$usuarios['id']."</td>";
+   echo "<td>" .$usuarios['id']."</td>";
    echo "<td>" .$usuarios['nombre']."</td>";
    echo "<td>" .$usuarios['apellidos']."</td>";
    echo "<td>" .$usuarios['edad']."</td>";
